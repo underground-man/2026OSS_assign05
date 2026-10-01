@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="in">
+    <button id="adbut">
+        추가
+    </button>
+
+    <ul>
+        <ul id="informs">
+
+        </ul>
+    </ul>
+
+
+    <script>
+        window.onload = function () {
+
+            const list = document.querySelector("#informs");
+
+
+            const btn = document.querySelector("#adbut");
+
+            function delele(line) {
+                line.remove();
+            }
+
+            function addele() {
+                let eles = document.querySelector("#in");
+                let line = document.createElement("li");
+                let dbut = document.createElement("button");
+
+
+                line.textContent = eles.value;
+                dbut.innerText = "x";
+
+            
+
+                list.appendChild(line);
+                line.appendChild(dbut);
+                
+
+                dbut.addEventListener("click", function(){
+                    line.remove();
+                });
+
+
+
+            }
+
+            btn.addEventListener("click", addele);
+
+
+
+
+
+        }
+    </script>
+</body>
+
+</html>

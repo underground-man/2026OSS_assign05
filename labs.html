@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #container {
+            width: 200px;
+            height: 50px;
+            background-color: rgb(249, 249, 221);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>동적요소 추가</h3>
+    <button id="addbtn">동적요소 추가</button>
+    <button id="deletebtn">문장 동적 삭제</button>
+    <div id="container"></div>
+
+    <h3>click 이벤트</h3>
+    <button id="clickbtn1">눌러보세요(alert)</button>
+    <button id="clickbtn2">눌러보세요(innerText)</button>
+    <button id="clickbtn3">눌러보세요(innerHTML)</button>
+    <div id="ch">여기에 데이터가 바뀝니다!
+    </div>
+
+    <!--계산기-->
+
+    <input type="text" id="num1" size="5">
+    <input type="text" id="num2" size="5">
+
+    <button id="btn">
+        add
+    </button>
+
+    <input type="text" id="result" readonly>
+
+
+
+    <!-- inner HTML-->
+    <div id="div1" onclick="changeText()">Hello</div>
+</body>
+
+</html>
+
+<script>
+
+
+    const abtn = document.querySelector("#addbtn");
+    const dbtn = document.querySelector("#deletebtn");
+    const container = document.querySelector("#container");
+     const p = document.createElement("p");
+
+    abtn.addEventListener("click", function () {
+
+       const p = document.createElement("p");
+
+        p.textContent = "새 문단입니다.";
+        container.appendChild(p);
+
+    });
+
+    dbtn.addEventListener("click",function(){
+        
+        container.removeChild(p);
+        
+    });
+
+    const btn1 = document.querySelector("#clickbtn1");
+    const btn2 = document.querySelector("#clickbtn2");
+    const btn3 = document.querySelector("#clickbtn3");
+
+    btn1.addEventListener("click", function () { alert("버튼1 클릭됨") });
+    btn2.addEventListener("click", function () {
+        document.querySelector("#ch").innerHTML = "<h1>버튼 2클릭됨</h1>";
+    });
+
+    btn3.addEventListener("click", function () {
+        document.querySelector("#ch").innerText = "<h1>버튼 3클릭됨</h1>";
+    });
+
+
+
+    /*
+    function caculnums(){
+        let n1 = document.querySelector("#num1").value;
+        let n2 = document.querySelector("#num2").value;
+        let n3 = number(n1)+number(n2);
+        document.querySelector("#result").value = n3;
+    }*/
+
+    const btn = document.querySelector("#btn");
+    btn.addEventListener("click", function () {
+        const n2 = document.querySelector("#num2").value;
+        const n1 = document.querySelector("#num1").value;
+        document.querySelector("#result").value = n1 + n2;
+    });
+
+
+    function changeText() {
+        document.getElementById("div1").innerHTML = "heeloworld";
+    }
+</script>
