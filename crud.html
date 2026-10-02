@@ -18,7 +18,7 @@
         <input id="author" type="text">
         <input id="category" type="text">
         <button id="submit">
-
+            추가
         </button>
 
     </form>
@@ -51,8 +51,25 @@
 
         const ta = document.querySelector("#sets");
 
-        window.onload = function () {
+        function add() {
+            event.preventDefault();
+            let title = document.querySelector("#title");
+            let pub = document.querySelector("#year");
+            let price = document.querySelector("#price");
+            let author = document.querySelector("#author");
+            let category = document.querySelector("#category");
+
+            books.push({id: ++id, title: title.value, publishedYear:Number(pub.value), price:Number(price.value), author:author.value, category:category.value});
+            
+            cre();
+        }
+
+        function cre() {
+
+            ta.textContent="";
+    
             books.forEach(function (book) {
+
                 let col = document.createElement("tr");
                 let a = document.createElement("td");
                 let b = document.createElement("td");
@@ -60,9 +77,14 @@
                 let d = document.createElement("td");
                 let e = document.createElement("td");
                 let f = document.createElement("td");
+                let g = document.createElement("td");
 
 
+                let button1 = document.createElement("button");
+                let button2 = document.createElement("button");
 
+                
+                
                 
                 a.textContent = book.id;
                 b.textContent = book.title;
@@ -71,7 +93,10 @@
                 e.textContent = book.author;
                 f.textContent = book.category;
 
-                
+                button1.innerText = "수정";
+                button2.innerText = "삭제";
+
+
                 ta.appendChild(col);
 
 
@@ -81,19 +106,26 @@
                 col.appendChild(d);
                 col.appendChild(e);
                 col.appendChild(f);
+                col.appendChild(g);
+                g.appendChild(button1);
+                g.appendChild(button2);
 
                 
 
             }
             );
-
-            let a = document.createElement("td");
-            let b = document.createElement("td");
-            let c = document.createElement("td");
-            let d = document.createElement("td");
-            let e = document.createElement("td");
-            let f = document.createElement("td");
+            
         }
+
+
+        window.onload = function (){
+            cre();
+        }
+
+
+        const form = document.querySelector("#set");
+        form.addEventListener("submit",add);
+        
 
 
     </script>
