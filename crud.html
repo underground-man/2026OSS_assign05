@@ -1,23 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
 
+    <!-- 입력데이터 폼 -->
+    <form id="set" method="post">
+
+        <input id="title" type="text">
+        <input id="year" type="number">
+        <input id="price" type="number">
+        <input id="author" type="text">
+        <input id="category" type="text">
+        <button id="submit">
+
+        </button>
+
+    </form>
+
+
+    <!-- 출력 -->
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>이름</th>
+                <th>출시 날짜</th>
+                <th>가격</th>
+                <th>작가</th>
+                <th>분류</th>
+            </tr>
+        </thead>
+
+        <tbody id="sets">
+
+        </tbody>
+    </table>
+
+
+
     <script>
-        let books = [ {id:1, title: "java",publishedYear:2011,price: 10000,author: "cruise"},{id:2, title: "python",publishedYear:1999,price: 15000,author: "chandler"},{id:3, title: "C",publishedYear:2000,price: 13000,author: "curnel"}] 
-        let id = 0;
-        
-        books.forEach(function(){
-            id = books.id+1;
-        });
+        let books = [{ id: 1, title: "java", publishedYear: 2011, price: 10000, author: "cruise", category: "science" }, { id: 2, title: "python", publishedYear: 1999, price: 15000, author: "chandler", category: "science" }, { id: 3, title: "C", publishedYear: 2000, price: 13000, author: "curnel", category: "science" }];
+        let id = 3;
+        let blocks = [];
 
-        window.onload = function(){
-        
+        const ta = document.querySelector("#sets");
 
+        window.onload = function () {
+            books.forEach(function (book) {
+                let col = document.createElement("tr");
+                let a = document.createElement("td");
+                let b = document.createElement("td");
+                let c = document.createElement("td");
+                let d = document.createElement("td");
+                let e = document.createElement("td");
+                let f = document.createElement("td");
+
+
+
+                
+                a.textContent = book.id;
+                b.textContent = book.title;
+                c.textContent = book.publishedYear;
+                d.textContent = book.price;
+                e.textContent = book.author;
+                f.textContent = book.category;
+
+                
+                ta.appendChild(col);
+
+
+                col.appendChild(a);
+                col.appendChild(b);
+                col.appendChild(c);
+                col.appendChild(d);
+                col.appendChild(e);
+                col.appendChild(f);
+
+                
+
+            }
+            );
+
+            let a = document.createElement("td");
+            let b = document.createElement("td");
+            let c = document.createElement("td");
+            let d = document.createElement("td");
+            let e = document.createElement("td");
+            let f = document.createElement("td");
         }
 
 
