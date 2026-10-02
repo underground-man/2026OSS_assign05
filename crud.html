@@ -110,6 +110,13 @@
                 g.appendChild(button1);
                 g.appendChild(button2);
 
+                button2.addEventListener("click",function(){
+                    books = books.filter(function(com){
+                        return book.id !== com.id; 
+                    });
+                    cre();
+                });
+
                 
 
             }
