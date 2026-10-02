@@ -6,8 +6,8 @@ JavaScript의 DOM, Event, Array를 이용해서 서버와 DB 없이 한 페이�
 
 ## Deployment
 
-- Vercel 배포 URL: ⚠️ https://(여기에 실제 배포 URL)
-- GitHub Repository: https://github.com/2026-2-OSS/assign05-c02-22300330
+- Vercel 배포 URL: https://2026ossweek5.vercel.app/
+- GitHub Repository: https://2026ossweek5.vercel.app/
 
 | 페이지 | 파일 |
 | --- | --- |
@@ -64,12 +64,20 @@ Create와 Update가 같은 `add()` 함수를 거치므로 두 기능 모두에 �
 
 ## AI / Search Usage
 
-⚠️ 실제로 사용한 도구와 내용으로 수정해 주세요. 아래는 노트 내용을 바탕으로 쓴 예시입니다.
+
 
 - **사용한 도구**: Claude (AI)
-- **사용 목적**: 막힌 부분의 원인을 확인하고, Array 메서드와 이벤트 처리 방법을 이해하려고 사용했다. README 초안 작성에도 도움을 받았고, 내용은 내가 확인하고 수정했다.
-- **코드 적용**: `filter()`로 삭제하는 방법을 확인해 Delete에 적용했고, `findIndex()`로 수정할 항목을 찾는 방법을 확인해 Update에 적용했다.
-- **새롭게 이해한 내용**: `filter()`는 원본을 바꾸지 않고 새 Array를 반환한다는 점, `findIndex()`는 조건에 맞는 첫 번째 데이터의 위치를 반환한다는 점을 이해했다.
+- **사용 방식**: 
+
+1.막힌 부분의 원인 확인
+
+2. Array 메서드와 이벤트 처리 방법등 이해되지 않는 내용에 대한 질문 
+
+3.README 초안 작성
+
+4.README 초안 작성을 제외한 모든 작업에서 Cowork 기능 사용하지 않음.
+
+
 
 ## Problem & Solution
 
@@ -89,6 +97,5 @@ Create와 Update가 같은 `add()` 함수를 거치므로 두 기능 모두에 �
 
 ## Reflection
 
-- 화면에 보이는 것과 실제 데이터는 별개라는 것을 알게 되었다. 화면 요소만 지우면 데이터가 남고, Array만 바꾸면 화면이 그대로여서 두 가지를 항상 함께 맞춰야 한다.
-- 오류의 대부분이 오타나 id 불일치처럼 사소한 곳에서 났고, 콘솔 에러 메시지를 읽는 습관이 도움이 되었다.
-- ⚠️ 궁금한 점을 한 가지 적어 주세요. (예: 새로고침해도 데이터가 유지되려면 어떻게 해야 하는지)
+- 가장 불만이였던 점은 function() 사용시 매개변수를 ()안에 넣기 힘들다는 점이였다. function 간 상호작용을 위해선 전역 변수를 지정해 function간에 변수를 통한 간접적 사용이였다(stcheck변수). 
+- 또 위계질서나 위치에따라서 코드가 실행되기도 하고 안되기도 해서 매우 불편했다.
