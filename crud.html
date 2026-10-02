@@ -59,15 +59,15 @@
             let author = document.querySelector("#author");
             let category = document.querySelector("#category");
 
-            books.push({id: ++id, title: title.value, publishedYear:Number(pub.value), price:Number(price.value), author:author.value, category:category.value});
-            
+            books.push({ id: ++id, title: title.value, publishedYear: Number(pub.value), price: Number(price.value), author: author.value, category: category.value });
+
             cre();
         }
 
         function cre() {
 
-            ta.textContent="";
-    
+            ta.textContent = "";
+
             books.forEach(function (book) {
 
                 let col = document.createElement("tr");
@@ -83,9 +83,9 @@
                 let button1 = document.createElement("button");
                 let button2 = document.createElement("button");
 
-                
-                
-                
+
+
+
                 a.textContent = book.id;
                 b.textContent = book.title;
                 c.textContent = book.publishedYear;
@@ -110,29 +110,32 @@
                 g.appendChild(button1);
                 g.appendChild(button2);
 
-                button2.addEventListener("click",function(){
-                    books = books.filter(function(com){
-                        return book.id !== com.id; 
-                    });
-                    cre();
+                button2.addEventListener("click", function () {
+                    if (confirm("삭제를 원하는가?")) {
+                        books = books.filter(function (com) {
+                            return book.id !== com.id;
+                        });
+                        cre();
+                    }
+
                 });
 
-                
+
 
             }
             );
-            
+
         }
 
 
-        window.onload = function (){
+        window.onload = function () {
             cre();
         }
 
 
         const form = document.querySelector("#set");
-        form.addEventListener("submit",add);
-        
+        form.addEventListener("submit", add);
+
 
 
     </script>
