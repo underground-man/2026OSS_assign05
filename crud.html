@@ -62,7 +62,33 @@
             let category = document.querySelector("#category");
 
         function add() {
-         event.preventDefault();   
+         event.preventDefault();  
+         
+         //validationdfnspodfjnspdfasnksabdkdsjvs뭐시기 
+
+        if(title.value.trim()==""){
+            alert("이름이 없습니다.");
+            title.focus();
+            return;
+        }
+
+        
+        if(Number(price.value)<3000){
+            alert("가격이 너무 싸요.");
+            price.focus();
+            return;
+        }
+
+        
+        if(author.value.trim()==""){
+            alert("작가 이름이 없습니다.");
+            author.focus();
+            return;
+        }
+
+        
+
+         
 
             if(stcheck){
 
@@ -80,7 +106,7 @@
             books.push({ id: ++id, title: title.value, publishedYear: Number(pub.value), price: Number(price.value), author: author.value, category: category.value });
             }
 
-            
+
             cre();
 
             stcheck=null;
