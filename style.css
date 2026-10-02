@@ -1,0 +1,9 @@
+body {font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+table { border-collapse: collapse; }
+th, td { border: 1px solid #ccc; padding: 8px; }
+form {border: 1px solid #ccc; padding: 16px; border-radius: 8px;}
+input {padding: 6px; border: 1px solid #aaa; border-radius: 4px;}
+.abutton {background-color: steelblue; color: white; border: none;}
+.abutton:hover { background-color: navy; }
+.dbutton {background-color: lightgreen; color: white; border: none;}
+.dbutton:hover { background-color: green;}

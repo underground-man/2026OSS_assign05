@@ -4,18 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>cruddddd</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <!-- 입력데이터 폼 -->
     <form id="set" method="post">
-
+        <p>제목</p>
         <input id="title" type="text">
+        <p>출시년도</p>
         <input id="year" type="number">
+        <p>가격</p>
         <input id="price" type="number">
+        <p>작가</p>
         <input id="author" type="text">
+        <p>분류</p>
         <input id="category" type="text">
         <button id="submit">
             추가
@@ -134,6 +139,8 @@
 
                 let button1 = document.createElement("button");
                 let button2 = document.createElement("button");
+                button1.classList.add("abutton");
+                button2.classList.add("dbutton");
 
 
 
