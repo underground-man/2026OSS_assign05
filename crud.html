@@ -48,21 +48,45 @@
         let books = [{ id: 1, title: "java", publishedYear: 2011, price: 10000, author: "cruise", category: "science" }, { id: 2, title: "python", publishedYear: 1999, price: 15000, author: "chandler", category: "science" }, { id: 3, title: "C", publishedYear: 2000, price: 13000, author: "curnel", category: "science" }];
         let id = 3;
         let blocks = [];
+        let sbut = document.querySelector("#submit");
 
         const ta = document.querySelector("#sets");
 
-        function add() {
-            event.preventDefault();
-            let title = document.querySelector("#title");
+        let stcheck =null;
+
+
+                    let title = document.querySelector("#title");
             let pub = document.querySelector("#year");
             let price = document.querySelector("#price");
             let author = document.querySelector("#author");
             let category = document.querySelector("#category");
 
-            books.push({ id: ++id, title: title.value, publishedYear: Number(pub.value), price: Number(price.value), author: author.value, category: category.value });
+        function add() {
+         event.preventDefault();   
 
-            cre();
+            if(stcheck){
+
+            
+            let target = books.findIndex (function(book){
+                return book.id==stcheck.id;
+            });
+
+            books[target] = { id: stcheck.id, title: title.value, publishedYear: Number(pub.value), price: Number(price.value), author: author.value, category: category.value };
+
         }
+
+            else{
+            
+            books.push({ id: ++id, title: title.value, publishedYear: Number(pub.value), price: Number(price.value), author: author.value, category: category.value });
+            }
+
+            
+            cre();
+
+            stcheck=null;
+            sbut.innerText="추가";
+        
+    }
 
         function cre() {
 
@@ -110,6 +134,22 @@
                 g.appendChild(button1);
                 g.appendChild(button2);
 
+
+                button1.addEventListener("click",function(){
+                                   title.value=book.title  ;
+                  pub.value =book.publishedYear ;
+                  price.value=book.price ;
+                  author.value=book.author ;
+                  category.value=book.category ;
+                  stcheck = book;
+                  sbut.innerText="수정";
+                
+                });
+
+
+
+
+                
                 button2.addEventListener("click", function () {
                     if (confirm("삭제를 원하는가?")) {
                         books = books.filter(function (com) {
