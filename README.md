@@ -7,7 +7,7 @@ JavaScript의 DOM, Event, Array를 이용해서 서버와 DB 없이 한 페이�
 ## Deployment
 
 - Vercel 배포 URL: https://2026ossweek5.vercel.app/
-- GitHub Repository: https://2026ossweek5.vercel.app/
+- GitHub Repository: https://github.com/2026-2-OSS/assign05-c02-22300330
 
 | 페이지 | 파일 |
 | --- | --- |
